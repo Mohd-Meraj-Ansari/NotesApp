@@ -4,10 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Notes</title>
-    <link
-      rel="icon"
-      href="./logo.png"
-    />
+    <link rel="icon" href="./logo_1.png" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -131,39 +128,43 @@
           </div>
         </div>
 
-        <div class="py-3" id="header">
-          <h2 class="display-1">Notes</h2>
+        <section id="header">
+          <div>
+            <h2 class="display-1 pb-2">Notes</h2>
 
-          <div class="m-0 p-0 d-flex flex-wrap justify-content-between">
-            <div>
-              <button
-                type="button"
-                class="btn btn-primary"
-                data-bs-toggle="modal"
-                data-bs-target="#staticBackdrop"
-                id="add"
-              >
-                Add
-              </button>
-            </div>
+            <div class="m-0 p-0 d-flex flex-wrap justify-content-between">
+              <div>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#staticBackdrop"
+                  id="add"
+                >
+                  Add
+                </button>
+              </div>
 
-            <div class="">
-              <span class="btn border-0 disabled">Theme</span>
-              <button
-                class="btn btn-light"
-                id="themeBtn"
-                onclick="changeTheme()"
-              >
-                Light
-              </button>
+              <div class="">
+                <span class="btn border-0 disabled">Theme</span>
+                <button
+                  class="btn btn-light"
+                  id="themeBtn"
+                  onclick="changeTheme()"
+                >
+                  Light
+                </button>
+              </div>
             </div>
           </div>
-        </div>
+        </section>
 
-        <div
-          class="d-flex flex-wrap flex-column flex-md-row justify-content-center align-items-center gap-3 mt-5"
-          id="parent"
-        ></div>
+        <section id="content">
+          <div
+            class="d-flex flex-wrap flex-column flex-md-row justify-content-center align-items-center gap-3"
+            id="parent"
+          ></div>
+        </section>
       </div>
     </div>
     <script

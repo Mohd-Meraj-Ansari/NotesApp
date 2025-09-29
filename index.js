@@ -4,7 +4,9 @@ let form = document.getElementById("taskForm");
 let modal = document.querySelector(".modal");
 let h5 = document.getElementById("cardheading");
 let p = document.getElementById("cardtext");
-let card = document.getElementsByClassName("card");
+let card;
+let headerSection;
+
 let themeBtn = document.getElementById("themeBtn");
 // let closeBtn = document.getElementById("getModalCloseBtn");
 let removeBtn = document.getElementById("getModalCloseBtn");
@@ -17,28 +19,35 @@ let taskDesc;
 let isDark = false;
 
 function changeTheme() {
-  cardArray = document.querySelectorAll(".outercard");
-  console.log(cardArray);
+  headerSection = document.getElementById("header");
   if (isDark == true) {
     themeBtn.innerText = "Light";
     document.querySelector("body").removeAttribute("class");
-    if (cardArray.length != 0) {
-      cardArray.forEach((card) => {
-        card.children[0].classList.remove("dark");
-      });
-    }
+
+    // console.log(headerSection);
+    headerSection.style.backgroundColor = "white";
+    headerSection.style.color = "black";
+
     isDark = false;
   } else {
     themeBtn.innerText = "Dark";
     document.querySelector("body").setAttribute("class", "dark");
+    headerSection.style.backgroundColor = "black";
+    headerSection.style.color = "white";
 
-    if (cardArray.length != 0) {
-      cardArray.forEach((card) => {
-        card.children[0].classList.add("dark");
-      });
-    }
     isDark = true;
   }
+  applyThemeToCards();
+}
+
+function applyThemeToCards() {
+  document.querySelectorAll(".outercard .card").forEach((card) => {
+    if (isDark) {
+      card.classList.add("dark");
+    } else {
+      card.classList.remove("dark");
+    }
+  });
 }
 
 form.addEventListener("submit", function (e) {
@@ -74,6 +83,7 @@ function addCard() {
 
   let contentDiv = document.createElement("div");
   contentDiv.classList.add("card-body");
+  contentDiv.classList.add("rounded-3");
 
   let header = document.createElement("h5");
   header.classList.add("card-title");
@@ -107,6 +117,8 @@ function addCard() {
   outerCard.appendChild(cardDiv);
   outerCard.appendChild(lowerDiv);
   parentDiv.append(outerCard);
+
+  applyThemeToCards();
 
   document.querySelectorAll(".card").forEach((card) => {
     card.addEventListener("click", () => {
