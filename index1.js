@@ -65,15 +65,9 @@ form.addEventListener("submit", function (e) {
   //   modalInstance.hide();
   // }
 
-//   if (taskName != "" && taskDesc != "") {
-//     addCard();
-//   } else {
-//     setTimeout(() => {
-//       alert("Please enter both the fields");
-//     }, 500);
-//   }
-//   form.reset();
-// });
+  addCard();
+  form.reset();
+});
 
 modal.addEventListener("hidden.bs.modal", () => {
   form.reset();
