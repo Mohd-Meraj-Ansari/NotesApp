@@ -65,6 +65,7 @@ form.addEventListener("submit", function (e) {
   // }
   addCard();
   form.reset();
+
 });
 
 modal.addEventListener("hidden.bs.modal", () => {

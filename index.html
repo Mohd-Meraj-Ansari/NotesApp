@@ -53,7 +53,6 @@
                     id="heading"
                     name="taskName"
                     autocomplete="off"
-                    required
                   />
                 </div>
                 <div class="mb-3 px-3">
@@ -66,8 +65,10 @@
                     id="description"
                     name="taskDesc"
                     autocomplete="off"
-                    required
                   />
+                </div>
+                <div class="form-text px-3 text-danger">
+                  To add the task, make sure both fields are entered, otherwise it won’t be saved.
                 </div>
                 <div class="modal-footer">
                   <button
@@ -80,6 +81,7 @@
                   </button>
                   <button
                     type="submit"
+                    data-bs-dismiss="modal"
                     class="btn btn-primary px-3"
                     id="getModalCloseBtn"
                   >
@@ -175,6 +177,5 @@
 
     <script src="index.js"></script>
     <!-- <script src="index1.js"></script> -->
-    
   </body>
 </html>
