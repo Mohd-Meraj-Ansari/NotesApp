@@ -63,9 +63,15 @@ form.addEventListener("submit", function (e) {
   //   document.activeElement.blur();
   //   modalInstance.hide();
   // }
-  addCard();
-  form.reset();
 
+  if (taskName != "" && taskDesc != "") {
+    addCard();
+  } else {
+    setTimeout(() => {
+      alert("Please enter both the fields");
+    }, 500);
+  }
+  form.reset();
 });
 
 modal.addEventListener("hidden.bs.modal", () => {
